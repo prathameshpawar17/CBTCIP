@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Iris Flower Classification</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-image: url('https://c4.wallpaperflare.com/wallpaper/46/657/294/beautiful-iris-flowers-in-summer-blue-irises-wallpaper-preview.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        .login-form-3 {
+            padding: 3%;
+            box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 1rem;
+            margin: 70px auto;
+            width: 50%;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .input-field {
+            margin-bottom: 15px;
+        }
+        .input-box {
+            width: 80%;
+            padding: 10px;
+            border-radius: 1rem;
+            border: 1px solid #ced4da;
+        }
+        h1 {
+            color: #b90cb2;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 1rem;
+            display: inline-block;
+        }
+        .btn-predict {
+            background: darksalmon;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 1rem;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .btn-predict:hover {
+            background: #e89c90;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="text-center">
+        <b>IRIS FLOWER CLASSIFICATION</b>
+    </h1>
+    <div class="login-form-3">
+        <form action='/predict' method="POST">
+            <div class="input-field">
+                <input type='text' name='sepal_length' placeholder="Enter sepal length in cm" class="input-box" required>
+            </div>
+            <div class="input-field">
+                <input type='text' name='sepal_width' placeholder="Enter sepal width in cm" class="input-box" required>
+            </div>
+            <div class="input-field">
+                <input type='text' name='petal_length' placeholder="Enter petal length in cm" class="input-box" required>
+            </div>
+            <div class="input-field">
+                <input type='text' name='petal_width' placeholder="Enter petal width in cm" class="input-box" required>
+            </div>
+            <div class="input-field">
+                <input type='submit' value='Predict' class="btn-predict">
+            </div>
+            <div class="input-field">
+                <p>Predicted Class: {{result}}</p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
